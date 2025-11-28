@@ -1,8 +1,15 @@
 using UnityEngine;
+using TMPro;
 
 public class Referee : MonoBehaviour
 {
+    public TMP_Text resultText;
     private bool winnerDeclared = false;
+
+    void Start()
+    {
+        resultText.text = "";
+    }
 
     void OnTriggerEnter(Collider car)
     {
@@ -16,14 +23,14 @@ public class Referee : MonoBehaviour
 
             if (!validator.AllVisitedThisLap)
             {
-                Debug.Log("Pelaaja ylitti maalin, mutta kaikkia checkpointteja ei ole käyty -> ei voittoa");
                 return;
             }
         }
 
         if (!winnerDeclared)
         {
-            Debug.Log($"Winner: {winnerName}");
+            resultText.text = $"WINNER: {winnerName}";
+            GameManager.Instance.Phase = RacePhase.Finished;
             winnerDeclared = true;
         }
     }
