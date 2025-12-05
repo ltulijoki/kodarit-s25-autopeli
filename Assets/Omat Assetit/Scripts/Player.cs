@@ -4,6 +4,7 @@ public class Player : MonoBehaviour
 {
     public float speed = 10f;
     public float turnSpeed = 50f;
+    public AudioClip engineSFX;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,9 +19,13 @@ public class Player : MonoBehaviour
 
         float move = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         float turn = Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime;
-        // Debug.Log(move);
 
         transform.Translate(Vector3.forward * move);
         transform.Rotate(Vector3.up * turn);
+
+        if (move != 0 || turn != 0)
+        {
+            AudioManager.Instance.PlaySFX(engineSFX);
+        }
     }
 }

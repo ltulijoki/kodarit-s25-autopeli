@@ -871,6 +871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   turnSpeed: 50
+  engineSFX: {fileID: 8300000, guid: c4d8928c75c21af43998193f0f038429, type: 3}
 --- !u!4 &215611255 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 522a332726338424a9a7da7796ce3440,
@@ -3850,7 +3851,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiText: {fileID: 483171892}
   countDownFrom: 3
-  stepSeconds: 1
+  stepSeconds: 2
+  pling: {fileID: 8300000, guid: eaef4f143647145b9b7029c298a0dd81, type: 3}
+  goSFX: {fileID: 8300000, guid: da963f44abc744964ae7b5532c010829, type: 3}
 --- !u!1 &501300360
 GameObject:
   m_ObjectHideFlags: 0
@@ -11165,6 +11168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16dd9dbf62c8e4aa4b0aa4b649716be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicSource: {fileID: 933278391}
+  sfxSource: {fileID: 403638023}
 --- !u!4 &1462587267
 Transform:
   m_ObjectHideFlags: 0
